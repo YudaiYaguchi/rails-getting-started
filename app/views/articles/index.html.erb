@@ -3,12 +3,19 @@
 Our blog has <%= Article.public_count %> articles and counting!
 
 <ul>
-  <% @articles.each do |article| %>
+  <% @articles.each do |article| %> 
     <% unless article.archived? %>
       <li>
         <%= link_to article.title, article %>
       </li>
     <% end %>
+
+    <% if article.image.attached? %>
+      <%= image_tag article.image, size: "150x150" %><br>
+    <%else%>
+      <img src="http://placehold.jp/150x150"><br>
+    <%end%>
+
   <% end %>
 </ul>
 

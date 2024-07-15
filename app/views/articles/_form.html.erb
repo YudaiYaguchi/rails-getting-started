@@ -16,6 +16,11 @@
   </div>
 
   <div>
+    <%= form.label :images, "画像" %><br>
+    <%= form.file_field :image, accept: "image/*" %>
+  </div>
+
+  <div>
   <%= form.label :status %><br>
   <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
 </div>

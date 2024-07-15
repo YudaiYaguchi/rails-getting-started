@@ -8,6 +8,9 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
+   <% if comment.image.attached? %>
+      <%= image_tag comment.image, size: "150x150" %><br>
+  <%end%>
 
   <p>
     <%= link_to "Destroy Comment", [comment.article, comment], data: {
